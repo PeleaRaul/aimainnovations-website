@@ -63,3 +63,11 @@ To run locally:
    ```bash
    git clone https://github.com/PeleaRaul/aima-innovations-website.git
    cd aima-innovations-website
+
+## 🚀 Project Status & Attribution
+
+This GitHub repository is a *personal portfolio demo* of the AIMA INNOVATIONS website, created by **Pelea Raul-Daniel**. It is not the official production version used by the company.
+
+The company has its own hosted version, with potential changes and backend integrations.
+
+> ⚠️ All logos, names, and branding belonging to AIMA INNOVATIONS SRL are used here for demonstration purposes only. If you clone or use this codebase, you must **remove or replace all AIMA-specific content** (logos, names, images, texts).

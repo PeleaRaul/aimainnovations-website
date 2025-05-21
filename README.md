@@ -61,5 +61,5 @@ To run locally:
 
 1. Clone the repo  
    ```bash
-   git clone https://github.com/yourusername/aima-innovations-website.git
+   git clone https://github.com/PeleaRaul/aima-innovations-website.git
    cd aima-innovations-website

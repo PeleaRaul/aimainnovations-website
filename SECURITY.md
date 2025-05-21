@@ -1,21 +1,54 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported Versions
+We take security seriously at **AIMA Innovations**. Please read below to understand which versions are currently maintained and how you can report any vulnerabilities or security concerns.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+---
+
+## ✅ Supported Versions
+
+The table below outlines which versions of our project receive **active security updates**:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.2.x   | ✅ :white_check_mark: |
+| 1.1.x   | ❌ :x:                |
+| 1.0.x   | ❌ :x:                |
+| < 1.0   | ❌ :x:                |
 
-## Reporting a Vulnerability
+> **Note:** Only the latest major release branch (1.2.x) is guaranteed to receive security patches. Please update to the latest version for continued support.
 
-Use this section to tell people how to report a vulnerability.
+---
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+## 🛡️ Reporting a Vulnerability
+
+If you discover a security vulnerability or suspect a potential weakness in this project, **please contact us directly and privately. Do not create a public issue**.
+
+### 🔔 How to Report
+
+- 📧 Email us at **security@aimainnovations.ro**
+- 📂 Optionally include:
+  - Steps to reproduce the issue
+  - A brief description of the vulnerability
+  - The environment or version affected
+  - Any proof-of-concept (PoC) code, if available
+
+### ⏱ What to Expect
+
+- We’ll acknowledge receipt of your report within **2–3 business days**
+- You’ll receive regular updates as we investigate the report
+- We aim to resolve and release patches within **30 days**, depending on severity
+
+### 🔒 Confidentiality
+
+We treat all vulnerability reports **confidentially** and commit to responsibly disclosing security patches before public disclosure.
+
+---
+
+## 🔁 Responsible Disclosure
+
+We follow best practices for responsible disclosure and expect researchers to do the same. If you'd like to publicly credit your contribution, we’re happy to add acknowledgments (unless anonymity is requested).
+
+---
+
+Thank you for helping us keep our project and users secure.  
+– AIMA Innovations Team

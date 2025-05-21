@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting to facebook...</title>
+  <style>
+    /* Basic reset and full height */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      margin-bottom: 16px;
+      color: #4070f4; /* matching your theme */
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+    p {
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: #555;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4070f4;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #034bf1;
+    }
+  </style>
+  <script>
+    const facebookURL = "https://facebook.com/yourusername";
+
+    setTimeout(() => {
+      window.location.href = facebookURL;
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Redirecting to Facebook...</h1>
+    <p>If you are not redirected automatically, please click the link below:</p>
+    <a href="https://facebook.com/yourusername" class="button" target="_blank" rel="noopener noreferrer">
+      Go to Facebook
+    </a>
+  </div>
+</body>
+</html>

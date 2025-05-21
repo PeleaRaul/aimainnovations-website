@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --first-color: #5B65F5;
+    --first-color-light: #C4C7F5;
+    --dark-color: #0E1026;
+    --white-color: #FBFBFB;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Standard */
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* optional, prevents interaction */
+}
+
+/* Animated underline for nav links */
+.animated-underline {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+.animated-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background-color: var(--first-color);
+    transition: width 0.3s ease;
+}
+.animated-underline:hover::after,
+.animated-underline.active::after {
+    width: 100%;
+}
+
+  /* Mobile menu base */
+  #nav-menu-mobile {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    background-color: white; /* subtle bg */
+    border-radius: 0.5rem; /* rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+                0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+
+  /* Mobile menu open */
+  #nav-menu-mobile.open {
+    max-height: 500px;
+  }
+
+  /* Mobile links fade/slide animation */
+  #nav-menu-mobile.open a {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+  }
+
+  #nav-menu-mobile a {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: none;
+  }
+
+  #carousel {
+  width: 300vw;
+}

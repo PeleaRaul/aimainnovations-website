@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.aimainnovations.ro/index.php</loc>
+  </url>
+
+  <url>
+    <loc>https://www.aimainnovations.ro/page/about.php</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/offers.php</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/projects.php</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/services.php</loc>
+  </url>
+
+  <url>
+    <loc>https://www.aimainnovations.ro/page/legal/cookies.php</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/legal/privacy.php</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/legal/terms.php</loc>
+  </url>
+
+  <url>
+    <loc>https://www.aimainnovations.ro/page/support/contact.php</loc>
+  </url>
+  <!-- PDF files can be included in sitemap, but it's optional -->
+  <url>
+    <loc>https://www.aimainnovations.ro/page/support/brochure.pdf</loc>
+  </url>
+
+  <!-- Redirect pages are usually excluded unless you want them indexed -->
+  <url>
+    <loc>https://www.aimainnovations.ro/page/redirect/facebook.html</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/redirect/instagram.html</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/redirect/linkedin.html</loc>
+  </url>
+  <url>
+    <loc>https://www.aimainnovations.ro/page/redirect/youtube.html</loc>
+  </url>
+
+</urlset>

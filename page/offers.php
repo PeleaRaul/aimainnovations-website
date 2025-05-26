@@ -1,8 +1,21 @@
 <!-- DO NOT EDIT THESE -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/settings/config.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/header_module.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/loading_screen.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/cookies_module.php'?>
+<?php
+function findOfferImage($basePath, $baseUrl, $offerName) {
+    $extensions = ['webp', 'png', 'jpg', 'jpeg', 'gif'];
+    foreach ($extensions as $ext) {
+        $filePath = $basePath . $offerName . '.' . $ext;
+        if (file_exists($filePath)) {
+            $version = filemtime($filePath); // cache busting based on file modification time
+            return $baseUrl . $offerName . '.' . $ext . '?v=' . $version;
+        }
+    }
+    // fallback image or empty string if no file found
+    return '';
+}
+?>
 <body>
 <main class="bg-white text-gray-900">
 
@@ -14,26 +27,25 @@
   </section>
 
   <?php
-  // Offer data with text and random image URLs
+  $basePath = $_SERVER['DOCUMENT_ROOT'] . '/assets/public/img/';
+  $baseUrl = '/assets/public/img/';
+
   $offers = [
-    [
-      'title' => 'Engineering Essentials for Startups',
-      'text' => 'Whether you\'re building your first product or refining your MVP, we provide design, prototyping, and consultation support
-      that adapts to your pace. It’s everything you need to launch smart and scale fast — no unnecessary extras.',
-      'img' => 'https://picsum.photos/seed/startup/500/300',
-    ],
-    [
-      'title' => 'Automation & Optimization Package',
-      'text' => 'Streamline your operations with expert-led automation and SCADA solutions. We analyze, architect, and guide implementation
-      so you can boost efficiency and minimize downtime — from control systems to real-time monitoring.',
-      'img' => 'https://picsum.photos/seed/automation/500/300',
-    ],
-    [
-      'title' => 'The Full Innovation Suite',
-      'text' => 'For complex challenges or ambitious goals, we offer a comprehensive engineering partnership: CAD, automation,
-      prototyping, ERP/CRM implementation, and technical consulting — all in one streamlined package.',
-      'img' => 'https://picsum.photos/seed/innovation/500/300',
-    ],
+      [
+          'title' => 'Engineering Essentials for Startups',
+          'text' => "Whether you're building your first product or refining your MVP, we provide design, prototyping, and consultation support that adapts to your pace. It’s everything you need to launch smart and scale fast — no unnecessary extras.",
+          'img' => findOfferImage($basePath, $baseUrl, 'offer1'),
+      ],
+      [
+          'title' => 'Automation & Optimization Package',
+          'text' => "Streamline your operations with expert-led automation and SCADA solutions. We analyze, architect, and guide implementation so you can boost efficiency and minimize downtime — from control systems to real-time monitoring.",
+          'img' => findOfferImage($basePath, $baseUrl, 'offer2'),
+      ],
+      [
+          'title' => 'The Full Innovation Suite',
+          'text' => "For complex challenges or ambitious goals, we offer a comprehensive engineering partnership: CAD, automation, prototyping, ERP/CRM implementation, and technical consulting — all in one streamlined package.",
+          'img' => findOfferImage($basePath, $baseUrl, 'offer3'),
+      ],
   ];
 
   foreach ($offers as $index => $offer) :
@@ -43,7 +55,7 @@
 
   <section class="flex flex-col md:flex-row items-center md:items-start mb-16 mt-5 gap-4 px-4 md:px-20 lg:px-72">
     <?php if ($isLeft) : ?>
-      <img src="<?= $offer['img'] ?>" alt="<?= htmlspecialchars($offer['title']) ?>" class="w-full md:w-1/3 rounded-lg shadow-lg object-cover" />
+      <img src="<?= htmlspecialchars($offer['img']) ?>" alt="<?= htmlspecialchars($offer['title']) ?>" class="w-full md:w-1/3 rounded-lg shadow-lg object-cover" />
       <div class="md:w-2/3 text-gray-800 px-2">
         <h2 class="text-3xl font-semibold text-[var(--first-color)] mb-3"><?= htmlspecialchars($offer['title']) ?></h2>
         <p class="leading-relaxed text-lg"><?= htmlspecialchars($offer['text']) ?></p>
@@ -65,7 +77,7 @@
           Brochure
         </a>
       </div>
-      <img src="<?= $offer['img'] ?>" alt="<?= htmlspecialchars($offer['title']) ?>" class="w-full md:w-1/3 rounded-lg shadow-lg object-cover" />
+      <img src="<?= htmlspecialchars($offer['img']) ?>" alt="<?= htmlspecialchars($offer['title']) ?>" class="w-full md:w-1/3 rounded-lg shadow-lg object-cover" />
     <?php endif; ?>
   </section>
 

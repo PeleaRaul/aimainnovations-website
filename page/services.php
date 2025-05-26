@@ -1,5 +1,4 @@
 <!-- DO NOT EDIT THESE -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/settings/config.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/header_module.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/loading_screen.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/cookies_module.php'?>

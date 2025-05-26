@@ -5,10 +5,8 @@
             <a href="https://aimainnovations.ro/" class="block"><img src="/assets/public/logos/logo.webp" alt="AIMA-INNOVATIONS" class="h-10 md:h-12" /></a>
             <p class="mb-6 text-gray-600 max-w-xs">Empowering your projects with modern, reliable solutions.</p>
             <div class="flex space-x-6 text-gray-400 text-xl">
-                <a href="/page/redirect/facebook.html" aria-label="Twitter" class="hover:text-[var(--first-color)] transition duration-300"><i class='bx bxl-facebook'></i></a>
                 <a href="/page/redirect/instagram.html" aria-label="Instagram" class="hover:text-[var(--first-color)] transition duration-300"><i class='bx bxl-instagram'></i></a>
                 <a href="/page/redirect/linkedin.html" aria-label="LinkedIn" class="hover:text-[var(--first-color)] transition duration-300"><i class='bx bxl-linkedin'></i></a>
-                <a href="/page/redirect/youtube.html" aria-label="GitHub" class="hover:text-[var(--first-color)] transition duration-300"><i class='bx bxl-youtube'></i></a>
             </div>
         </div>
         <div>

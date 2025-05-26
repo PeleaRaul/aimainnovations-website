@@ -1,5 +1,4 @@
 <!-- DO NOT EDIT THESE -->
-<?php include 'src/settings/config.php'?>
 <?php include 'src/modules/header_module.php'?>
 <?php include 'src/modules/loading_screen.php'?>
 <?php include 'src/modules/cookies_module.php'?>

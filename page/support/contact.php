@@ -1,10 +1,69 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/settings/config.php'?>
+
 <?php
 session_start();
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
 
+// Enable error reporting for debugging (remove in production)
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL);
+
+// Database connection parameters
+$servername = "191.96.94.5";   // usually localhost
+$username = "aimainno1_root";  // your DB username
+$password = "AIMAInnovations12#$";  // your DB password
+$dbname = "aimainno1_website";    // your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors = [];
+
+    // Validate inputs
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $country_code = trim($_POST['countryCode'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if (!preg_match('/^[A-Za-z\- ]+$/', $name)) {
+        $errors[] = "Invalid name format.";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email address.";
+    }
+    if (!preg_match('/^\+\d+$/', $country_code)) {
+        $errors[] = "Invalid country code.";
+    }
+    if (!preg_match('/^\d{7,20}$/', $phone)) {
+        $errors[] = "Invalid phone number.";
+    }
+    if (empty($message)) {
+        $errors[] = "Message cannot be empty.";
+    }
+
+    if (empty($errors)) {
+        $stmt = $conn->prepare("INSERT INTO contact_submissions (name, email, country_code, phone, message, submitted_at) VALUES (?, ?, ?, ?, ?, NOW())");
+        if (!$stmt) {
+            die("Prepare failed: " . $conn->error);
+        }
+        $stmt->bind_param("sssss", $name, $email, $country_code, $phone, $message);
+
+        if ($stmt->execute()) {
+            $success = true;
+            // clear form or give success message
+        } else {
+            $errors[] = "Database error: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+}
 ?>
 <!-- DO NOT EDIT THESE -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/header_module.php'; ?>
@@ -45,8 +104,8 @@ if (empty($_SESSION['csrf_token'])) {
       <h2 class="text-4xl font-bold text-blue-700 mb-4 text-center md:text-left">Contact Us</h2>
       <div class="mb-12 h-1 w-24 bg-blue-600 rounded"></div>
 
-      <form action="/settings/POS/send_contact.php" method="POST" class="space-y-6">
-        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+      <form method="POST" class="space-y-6">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
 
         <div>
           <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
@@ -277,7 +336,19 @@ if (empty($_SESSION['csrf_token'])) {
             placeholder="Write your message here..."
           ></textarea>
         </div>
+        <?php if ($success): ?>
+  <div class="text-green-600 font-semibold mb-4">Thank you! Your message has been sent.</div>
+<?php endif; ?>
 
+<?php if (!empty($errors)): ?>
+  <div class="text-red-600 font-semibold mb-4">
+    <ul>
+      <?php foreach ($errors as $error): ?>
+        <li><?= htmlspecialchars($error) ?></li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+<?php endif; ?>
         <div class="text-center md:text-left">
           <button
             type="submit"

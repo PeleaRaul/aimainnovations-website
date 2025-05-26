@@ -31,23 +31,14 @@
   <url>
     <loc>https://www.aimainnovations.ro/page/support/contact.php</loc>
   </url>
-  <!-- PDF files can be included in sitemap, but it's optional -->
   <url>
     <loc>https://www.aimainnovations.ro/page/support/brochure.pdf</loc>
-  </url>
-
-  <!-- Redirect pages are usually excluded unless you want them indexed -->
-  <url>
-    <loc>https://www.aimainnovations.ro/page/redirect/facebook.html</loc>
   </url>
   <url>
     <loc>https://www.aimainnovations.ro/page/redirect/instagram.html</loc>
   </url>
   <url>
     <loc>https://www.aimainnovations.ro/page/redirect/linkedin.html</loc>
-  </url>
-  <url>
-    <loc>https://www.aimainnovations.ro/page/redirect/youtube.html</loc>
   </url>
 
 </urlset>

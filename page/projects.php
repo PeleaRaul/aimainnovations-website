@@ -1,5 +1,4 @@
 <!-- DO NOT EDIT THESE -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/settings/config.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/header_module.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/loading_screen.php'?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/modules/cookies_module.php'?>
@@ -16,34 +15,26 @@
   <!-- Gallery -->
   <section class="max-w-7xl mx-auto px-4 pb-16 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     <?php
-      $demoImages = [
-        'https://picsum.photos/id/1011/800/600',
-        'https://picsum.photos/id/1015/800/600',
-        'https://picsum.photos/id/1016/800/600',
-        'https://picsum.photos/id/1018/800/600',
-        'https://picsum.photos/id/1020/800/600',
-        'https://picsum.photos/id/1021/800/600',
-        'https://picsum.photos/id/1024/800/600',
-        'https://picsum.photos/id/1025/800/600',
-        'https://picsum.photos/id/1018/800/600',
-        'https://picsum.photos/id/1020/800/600',
-        'https://picsum.photos/id/1021/800/600',
-        'https://picsum.photos/id/1024/800/600',
-        'https://picsum.photos/id/1025/800/600',
-        'https://picsum.photos/id/1018/800/600',
-        'https://picsum.photos/id/1020/800/600',
-        'https://picsum.photos/id/1021/800/600',
-        'https://picsum.photos/id/1024/800/600',
-        'https://picsum.photos/id/1025/800/600'
-      ];
-      foreach ($demoImages as $img): ?>
-        <div class="cursor-pointer group relative overflow-hidden rounded-xl shadow hover:shadow-xl transition" onclick="openModal('<?= $img ?>')">
-          <div class="aspect-video bg-gray-200">
-            <img src="<?= $img ?>" alt="Project" class="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105">
-          </div>
+    $uploadDir = __DIR__ . '/../assets/public/uploads/';
+    $webPath = '/assets/public/uploads/';
+
+    $imageExtensions = ['png', 'jpg', 'jpeg', 'webp', 'svg'];
+    $images = [];
+
+    foreach ($imageExtensions as $ext) {
+        $images = array_merge($images, glob($uploadDir . "*.$ext"));
+    }
+
+    foreach ($images as $path):
+        $url = $webPath . basename($path);
+    ?>
+        <div class="cursor-pointer group relative overflow-hidden rounded-xl shadow hover:shadow-xl transition" onclick="openModal('<?= $url ?>')">
+            <div class="aspect-video bg-gray-200">
+                <img src="<?= $url ?>" alt="Project" class="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105">
+            </div>
         </div>
     <?php endforeach; ?>
-  </section>
+</section>
 
   <!-- Modal -->
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden" onclick="closeModal()">

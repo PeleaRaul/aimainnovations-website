@@ -55,7 +55,7 @@ If you’re an admin, the admin panel allows you to:
 
 ---
 
-## 🏁 Getting Started
+## 🏁 Getting Started:
 
 To run locally:
 

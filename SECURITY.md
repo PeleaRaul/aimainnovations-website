@@ -1,6 +1,6 @@
 # 🔐 Security Policy
 
-We take security seriously at **AIMA Innovations**. Please read below to understand which versions are currently maintained and how you can report any vulnerabilities or security concerns.
+I take security seriously at **pelearaul.ro**. Please read below to understand which versions are currently maintained and how you can report any vulnerabilities or security concerns.
 
 ---
 
@@ -10,10 +10,7 @@ The table below outlines which versions of our project receive **active security
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.2.x   | ✅ :white_check_mark: |
-| 1.1.x   | ❌ :x:                |
-| 1.0.x   | ❌ :x:                |
-| < 1.0   | ❌ :x:                |
+| 1.2<   | ✅ :white_check_mark: |
 
 > **Note:** Only the latest major release branch (1.2.x) is guaranteed to receive security patches. Please update to the latest version for continued support.
 
@@ -25,7 +22,7 @@ If you discover a security vulnerability or suspect a potential weakness in this
 
 ### 🔔 How to Report
 
-- 📧 Email us at **security@aimainnovations.ro**
+- 📧 Email us at **contact@pelearaul.ro**
 - 📂 Optionally include:
   - Steps to reproduce the issue
   - A brief description of the vulnerability
@@ -51,4 +48,4 @@ We follow best practices for responsible disclosure and expect researchers to do
 ---
 
 Thank you for helping us keep our project and users secure.  
-– AIMA Innovations Team
+– Pelea Raul-Daniel

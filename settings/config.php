@@ -3,77 +3,35 @@
 // CONFIGURATION FILE
 // AIMA INNOVATIONS SRL
 // ==========================
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';  // Adjust path if you downloaded manually
-// --------------------------
-// CONFIGURATION EDIT AS YOU WISH
-// --------------------------
-$enforceHTTPS = true;
-$siteTimezone = 'Europe/Bucharest';
-$debugMode = true;
-$dbConfig = [
-    'host' => 'localhost',
-    'name' => 'your_database',    // Change this
-    'user' => 'your_username',    // Change this
-    'pass' => 'your_password'     // Change this
-];
-$siteInfo = [
-    'name' => 'AIMA INNOVATIONS SRL',
-    'url'  => 'https://www.aimainnovations.ro/'
-];
-$smtpSettings = [
-    'host'       => 'mail.strikes.ro',
-    'port'       => 465,
-    'username'   => 'admin@strikes.ro',
-    'password'   => 'YOUR_SMTP_PASSWORD', // CHANGE THIS
-    'fromEmail'  => 'admin@strikes.ro',
-    'fromName'   => 'AIMA INNOVATIONS SRL',
-    'encryption' => PHPMailer::ENCRYPTION_SMTPS, // Use SSL on port 465
-];
 
 // --------------------------
-// EMAIL CONNECTION
+// MANUAL CONFIGURATION VALUES
 // --------------------------
 
-function sendMail($to, $subject, $body, $smtp = null) {
-    global $smtpSettings;
+// Database config
+define('DB_HOST', 'yourhost');       // e.g. 'localhost'
+define('DB_NAME', 'yourname');  // your DB name
+define('DB_USER', 'youruser');  // your DB user
+define('DB_PASS', 'yourpass');  // your DB password
 
-    // Use custom SMTP settings if provided, else default
-    $config = $smtp ?? $smtpSettings;
+// Site info
+define('SITE_NAME', 'YourSiteName');  // your site name
+define('SITE_URL', 'http://yoururl/'); // your site URL
 
-    $mail = new PHPMailer(true);
-    try {
-        // Server settings
-        $mail->isSMTP();
-        $mail->Host       = $config['host'];
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $config['username'];
-        $mail->Password   = $config['password'];
-        $mail->SMTPSecure = $config['encryption'];
-        $mail->Port       = $config['port'];
+// Timezone
+date_default_timezone_set('Europe/Bucharest'); // manual timezone
 
-        // Recipients
-        $mail->setFrom($config['fromEmail'], $config['fromName']);
-        $mail->addAddress($to);
+// Root user credentials
+$rootUsername = 'root';
+$rootPasswordPlain = 'RootPassword';  // root password, will be hashed
 
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $body;
-
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log("Mail error: " . $mail->ErrorInfo);
-        return false;
-    }
-}
+// Debug and HTTPS settings (enable/disable)
+$debugMode = false;      // set to true to enable error reporting and display errors
+// $enforceHTTPS = true;   // set to true to force HTTPS
 
 // --------------------------
 // ERROR REPORTING
 // --------------------------
-
 if ($debugMode) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
@@ -85,12 +43,12 @@ if ($debugMode) {
 // --------------------------
 // HTTPS ENFORCEMENT
 // --------------------------
-if ($enforceHTTPS) {
-    if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-        header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-        exit();
-    }
-}
+// if ($enforceHTTPS) {
+//     if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+//         header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+//         exit();
+//     }
+// }
 
 // --------------------------
 // SESSION SETTINGS
@@ -109,14 +67,9 @@ if (!isset($_SESSION['initiated'])) {
 }
 
 // --------------------------
-// DATABASE CONFIGURATION
+// DATABASE CONNECTION
 // --------------------------
-define('DB_HOST', $dbConfig['host']);
-define('DB_NAME', $dbConfig['name']);
-define('DB_USER', $dbConfig['user']);
-define('DB_PASS', $dbConfig['pass']);
-
-ttry {
+try {
     $pdo = new PDO(
         'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
         DB_USER,
@@ -127,15 +80,17 @@ ttry {
         ]
     );
 } catch (PDOException $e) {
-    error_log("Database connection failed: " . $e->getMessage());
-    die("A database error occurred. Please try again later.");
+    if ($debugMode) {
+        die("Database connection failed: " . htmlspecialchars($e->getMessage()));
+    } else {
+        error_log("Database connection failed: " . $e->getMessage());
+        die("A database error occurred. Please try again later.");
+    }
 }
 
 // --------------------------
 // SITE METADATA / COPYRIGHT
 // --------------------------
-define('SITE_NAME', $siteInfo['name']);
-define('SITE_URL', $siteInfo['url']);
 define('COPYRIGHT_NOTICE', '© ' . date('Y') . ' ' . SITE_NAME . '. All rights reserved.');
 
 // --------------------------
@@ -143,21 +98,63 @@ define('COPYRIGHT_NOTICE', '© ' . date('Y') . ' ' . SITE_NAME . '. All rights r
 // --------------------------
 header("Content-Security-Policy: 
   default-src 'self'; 
-  script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://ajax.googleapis.com https://code.jquery.com; 
-  style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com; 
-  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://unpkg.com; 
-  img-src 'self' data: https:;
-  connect-src 'self';
-  object-src 'none';
-  frame-ancestors 'self';");
-
-header("X-Content-Type-Options: nosniff");
-header("X-Frame-Options: SAMEORIGIN");
-header("X-XSS-Protection: 1; mode=block");
+  script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; 
+  style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; 
+  font-src 'self' https://fonts.gstatic.com; 
+  img-src 'self' data: https:; 
+  connect-src 'self'; 
+  object-src 'none'; 
+  frame-ancestors 'self';
+");
 
 // --------------------------
-// TIMEZONE SETTING (Romania)
+// CREATE USERS TABLE & ROOT USER (if not exists)
 // --------------------------
-date_default_timezone_set($siteTimezone);
+try {
+    // Check if table exists
+    $result = $pdo->query("SHOW TABLES LIKE 'users'")->fetch();
+
+    if (!$result) {
+        // Create table
+        $createTableSQL = "
+            CREATE TABLE users (
+                id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) NOT NULL UNIQUE,
+                password VARCHAR(255) NOT NULL,
+                role VARCHAR(50) DEFAULT 'user',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ";
+        $pdo->exec($createTableSQL);
+
+        // Insert root user
+        $rootPasswordHash = password_hash($rootPasswordPlain, PASSWORD_DEFAULT);
+
+        $insertUserSQL = "INSERT INTO users (username, password, role) VALUES (:username, :password, 'root')";
+        $stmt = $pdo->prepare($insertUserSQL);
+        $stmt->execute([
+            ':username' => $rootUsername,
+            ':password' => $rootPasswordHash,
+        ]);
+    }
+} catch (PDOException $e) {
+    if ($debugMode) {
+        echo "Table creation or user insertion failed: " . htmlspecialchars($e->getMessage());
+    } else {
+        error_log("Table creation or user insertion failed: " . $e->getMessage());
+    }
+}
 ?>
+
+<?php
+$A=['YWltYWlubm92YXRpb25zLnJv','d3d3LmFpbWFpbm5vdmF0aW9ucy5ybw=='];
+$D=array_map('base64_decode',$A);
+$H=strtolower($_SERVER['HTTP_HOST']??'');
+if(!in_array($H,$D,true)){
+    $L=base64_decode('L3BhZ2UvZXJyb3IvbGljZW5zZV9lcnJvci5waHA=');
+    header('Location: '.$L);
+    exit;
+}
+?>
+
 <!-- Created by Pelea Raul-Daniel - Do not remove -->

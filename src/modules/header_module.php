@@ -4,50 +4,50 @@ $page = basename($_SERVER['PHP_SELF']);
 
 // Titles array
 $titles = [
-  'index.php' => 'Home - AIMA Innovations',
-  'cookies.php' => 'Cookies Policy - AIMA Innovations',
-  'privacy.php' => 'Privacy Policy - AIMA Innovations',
-  'terms.php' => 'Terms & Conditions - AIMA Innovations',
-  'about.php' => 'About Us - AIMA Innovations',
-  'contact.php' => 'Contact Us - AIMA Innovations',
-  'offers.php' => 'Our Offers - AIMA Innovations',
-  'projects.php' => 'Projects - AIMA Innovations',
-  'services.php' => 'Services - AIMA Innovations'
+  'index.php' => 'Home - [Your Company]',
+  'cookies.php' => 'Cookies Policy - [Your Company]',
+  'privacy.php' => 'Privacy Policy - [Your Company]',
+  'terms.php' => 'Terms & Conditions - [Your Company]',
+  'about.php' => 'About Us - [Your Company]',
+  'contact.php' => 'Contact Us - [Your Company]',
+  'offers.php' => 'Our Offers - [Your Company]',
+  'projects.php' => 'Projects - [Your Company]',
+  'services.php' => 'Services - [Your Company]'
 ];
 
 // Descriptions array
 $descriptions = [
-  'index.php'    => 'AIMA Innovations offers cutting-edge engineering services: technical consultation, automation design, CAD, prototyping, ERP/CRM implementation, and SCADA systems.',
-  'cookies.php'  => 'Read AIMA Innovations\' Cookies Policy. Learn how we use essential, functional, marketing, and third-party cookies to improve your browsing experience and protect your privacy.',
-  'privacy.php'  => 'AIMA Innovations Privacy Policy: Understand how we collect, use, and protect your personal data in compliance with GDPR and Romanian regulations.',
-  'terms.php'    => 'Terms and Conditions for using AIMA Innovations website and services. Review your rights and obligations when engaging with our engineering solutions.',
-  'about.php'    => 'Learn more about AIMA Innovations, our mission, expert team, and commitment to delivering innovative engineering projects and tailored technical consultancy.',
-  'contact.php'  => 'Get in touch with AIMA Innovations. Contact us for consultations, project inquiries, or support regarding our engineering and automation services.',
-  'offers.php'   => 'Explore AIMA Innovations’ service offerings including custom technical consultancy, CAD designs, automation, small hydro projects, prototyping, and more.',
-  'projects.php' => 'Discover AIMA Innovations’ portfolio showcasing our completed engineering projects in automation, hydro design, SCADA systems, and advanced prototyping.',
-  'services.php' => 'Detailed overview of engineering services provided by AIMA Innovations including automation design, ERP/CRM implementation, technical consultancy, and CAD solutions.'
+  'index.php'    => '[Your Company] offers cutting-edge engineering services: technical consultation, automation design, CAD, prototyping, ERP/CRM implementation, and SCADA systems.',
+  'cookies.php'  => 'Read [Your Company]\' Cookies Policy. Learn how we use essential, functional, marketing, and third-party cookies to improve your browsing experience and protect your privacy.',
+  'privacy.php'  => '[Your Company] Privacy Policy: Understand how we collect, use, and protect your personal data in compliance with GDPR and Romanian regulations.',
+  'terms.php'    => 'Terms and Conditions for using [Your Company] website and services. Review your rights and obligations when engaging with our engineering solutions.',
+  'about.php'    => 'Learn more about [Your Company], our mission, expert team, and commitment to delivering innovative engineering projects and tailored technical consultancy.',
+  'contact.php'  => 'Get in touch with [Your Company]. Contact us for consultations, project inquiries, or support regarding our engineering and automation services.',
+  'offers.php'   => 'Explore [Your Company]’ service offerings including custom technical consultancy, CAD designs, automation, small hydro projects, prototyping, and more.',
+  'projects.php' => 'Discover [Your Company]’ portfolio showcasing our completed engineering projects in automation, hydro design, SCADA systems, and advanced prototyping.',
+  'services.php' => 'Detailed overview of engineering services provided by [Your Company] including automation design, ERP/CRM implementation, technical consultancy, and CAD solutions.'
 ];
 
 // Keywords array
 $keywords = [
   'index.php'    => 'engineering, technical consultancy, automation design, CAD, prototyping, ERP, CRM, SCADA systems, small hydro design, water pumping',
   'cookies.php'  => 'cookies policy, GDPR, privacy, data protection, website cookies, tracking cookies, third-party cookies',
-  'privacy.php'  => 'privacy policy, personal data, GDPR, data protection, user privacy, AIMA Innovations',
-  'terms.php'    => 'terms and conditions, user agreement, website terms, legal, policies, AIMA Innovations',
-  'about.php'    => 'about us, company info, AIMA Innovations, engineering team, mission, vision',
-  'contact.php'  => 'contact, support, inquiries, AIMA Innovations, phone, email, consultation',
+  'privacy.php'  => 'privacy policy, personal data, GDPR, data protection, user privacy, [Your Company]',
+  'terms.php'    => 'terms and conditions, user agreement, website terms, legal, policies, [Your Company]',
+  'about.php'    => 'about us, company info, [Your Company], engineering team, mission, vision',
+  'contact.php'  => 'contact, support, inquiries, [Your Company], phone, email, consultation',
   'offers.php'   => 'services, engineering offers, consultancy, CAD design, automation, R&D, prototyping',
   'projects.php' => 'projects, portfolio, engineering projects, automation systems, hydro design, SCADA',
   'services.php' => 'engineering services, automation, ERP, CRM, technical consultancy, CAD, prototyping'
 ];
 
 // Default fallback values
-$defaultTitle = 'AIMA Innovations';
-$defaultDescription = 'Welcome to AIMA Innovations – your trusted partner for engineering solutions including automation, CAD design, small hydro and water pumping design, R&D, and SCADA systems.';
+$defaultTitle = '[Your Company]';
+$defaultDescription = 'Welcome to [Your Company] – your trusted partner for engineering solutions including automation, CAD design, small hydro and water pumping design, R&D, and SCADA systems.';
 $defaultKeywords = 'engineering, technical consultancy, automation, CAD, R&D, SCADA, ERP, CRM, small hydro, water pumping';
 
 // Base URL and current page URL for canonical and og:url
-$baseUrl = 'https://aimainnovations.ro';
+$baseUrl = 'https://[yoururl]';
 $currentUrl = $baseUrl . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Open Graph images - map to pages or use default
@@ -118,7 +118,7 @@ function getBackgroundUrl($baseName) {
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= htmlspecialchars($currentUrl) ?>">
     <meta property="og:image" content="<?= htmlspecialchars($ogImage) ?>">
-    <meta name="author" content="AIMA INNOVATIONS SRL & Pelea Raul-Daniel">
+    <meta name="author" content="[Your Company] SRL & Pelea Raul-Daniel">
     <meta name="theme-color" content="#0ea5e9">
     <link rel="stylesheet" href="/assets/scripts/style.css?v0.5">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -126,7 +126,7 @@ function getBackgroundUrl($baseName) {
 </head>
 <nav class="bg-white py-6 px-6 md:px-16 text-[var(--dark-color)] font-[var(--body-font)] shadow-sm">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <a href="https://aimainnovations.ro/" class="flex items-center"><img src="/assets/public/logos/logo.webp" alt="AIMA-INNOVATIONS" class="h-10 md:h-12 block" /></a>
+    <a href="https://[yoururl]/" class="flex items-center"><img src="/assets/public/logos/logo.webp" alt="[Your Company]" class="h-10 md:h-12 block" /></a>
     <button id="nav-toggle" class="md:hidden text-gray-600 focus:outline-none" aria-label="Toggle menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 6h16M4 12h16M4 18h16"></path>

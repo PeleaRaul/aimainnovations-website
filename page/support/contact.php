@@ -8,10 +8,10 @@ ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
 
 // Database connection parameters
-$servername = "191.96.94.5";   // usually localhost
-$username = "aimainno1_root";  // your DB username
-$password = "AIMAInnovations12#$";  // your DB password
-$dbname = "aimainno1_website";    // your database name
+$servername = "YourDBHost";   // usually localhost
+$username = "YourDBUser";  // your DB username
+$password = "YourDBPassword";  // your DB password
+$dbname = "YourDBName";    // your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -79,10 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="space-y-8">
       <div>
         <h2 class="text-3xl font-bold text-blue-700 mb-4">Company Information</h2>
-        <p class="text-gray-700 mb-2"><strong>Company Name:</strong> AIMA INNOVATIONS SRL</p>
-        <p class="text-gray-700 mb-2"><strong>Address:</strong> Luna de Sus, Cluj, Romania 407281</p>
-        <p class="text-gray-700 mb-2"><strong>Phone:</strong> +40 731 657 460</p>
-        <p class="text-gray-700 mb-2"><strong>Email:</strong> contact@aimainnovations.ro</p>
+        <p class="text-gray-700 mb-2"><strong>Company Name:</strong> [YOUR COMPANY NAME]</p>
+        <p class="text-gray-700 mb-2"><strong>Address:</strong> Adress, City, Country, Postal-Code</p>
+        <p class="text-gray-700 mb-2"><strong>Phone:</strong> +40 000 000 000</p>
+        <p class="text-gray-700 mb-2"><strong>Email:</strong> contact@[yoururl]</p>
       </div>
 
       <div>

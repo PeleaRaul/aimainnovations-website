@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.aimainnovations.ro/index.php</loc>
+    <loc>https://[yoururl]/index.php</loc>
   </url>
 
   <url>
-    <loc>https://www.aimainnovations.ro/page/about.php</loc>
+    <loc>https://[yoururl]/page/about.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/offers.php</loc>
+    <loc>https://[yoururl]/page/offers.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/projects.php</loc>
+    <loc>https://[yoururl]/page/projects.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/services.php</loc>
-  </url>
-
-  <url>
-    <loc>https://www.aimainnovations.ro/page/legal/cookies.php</loc>
-  </url>
-  <url>
-    <loc>https://www.aimainnovations.ro/page/legal/privacy.php</loc>
-  </url>
-  <url>
-    <loc>https://www.aimainnovations.ro/page/legal/terms.php</loc>
+    <loc>https://[yoururl]/page/services.php</loc>
   </url>
 
   <url>
-    <loc>https://www.aimainnovations.ro/page/support/contact.php</loc>
+    <loc>https://[yoururl]/page/legal/cookies.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/support/brochure.pdf</loc>
+    <loc>https://[yoururl]/page/legal/privacy.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/redirect/instagram.html</loc>
+    <loc>https://[yoururl]/page/legal/terms.php</loc>
+  </url>
+
+  <url>
+    <loc>https://[yoururl]/page/support/contact.php</loc>
   </url>
   <url>
-    <loc>https://www.aimainnovations.ro/page/redirect/linkedin.html</loc>
+    <loc>https://[yoururl]/page/support/brochure.pdf</loc>
+  </url>
+  <url>
+    <loc>https://[yoururl]/page/redirect/instagram.html</loc>
+  </url>
+  <url>
+    <loc>https://[yoururl]/page/redirect/linkedin.html</loc>
   </url>
 
 </urlset>

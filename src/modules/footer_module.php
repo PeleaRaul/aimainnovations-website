@@ -2,7 +2,7 @@
 <footer class="bg-white py-12 px-6 md:px-16 text-[var(--dark-color)] font-[var(--body-font)]">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         <div>
-            <a href="https://aimainnovations.ro/" class="block"><img src="/assets/public/logos/logo.webp" alt="AIMA-INNOVATIONS" class="h-10 md:h-12" /></a>
+            <a href="[Your Url]" class="block"><img src="/assets/public/logos/logo.webp" alt="{Your Company}" class="h-10 md:h-12" /></a>
             <p class="mb-6 text-gray-600 max-w-xs">Empowering your projects with modern, reliable solutions.</p>
             <div class="flex space-x-6 text-gray-400 text-xl">
                 <a href="/page/redirect/instagram.html" aria-label="Instagram" class="hover:text-[var(--first-color)] transition duration-300"><i class='bx bxl-instagram'></i></a>
@@ -40,7 +40,7 @@
     </div>
 <div id="footer-author" style="margin-bottom: -30px; margin-top: 3rem; text-align: center; color: gray; font-size: 12px; user-select: none; letter-spacing: 1px;">
   &copy; <?php echo date('Y'); ?> 
-  <a href="https://aimainnovations.ro/" target="_blank" rel="noopener noreferrer">AIMA INNOVATIONS SRL</a>. All rights reserved.<br>
+  <a href="[Your Url]" target="_blank" rel="noopener noreferrer">[YOUR COMPANY LTD/SRL]</a>. All rights reserved.<br>
   Website crafted by <a href="https://www.linkedin.com/in/pelearauldaniel/" target="_blank" rel="noopener noreferrer">Pelea Raul-Daniel</a>.
   <!-- Do not remove author line -->
 </div>
@@ -82,39 +82,39 @@
 </style>
 
 <script>
-  (function() {
-    let clicks = 0;
-    const maxClicks = 10;
-    const footer = document.getElementById('footer-author');
-    const message = "✨ You found the secret author credit! Website crafted by Pelea Raul-Daniel ✨";
+  (function () {
+  let _0x1a2b = 0;
+  const _0x4f5c = 10;
+  const _0x8a7d = document.getElementById(atob('Zm9vdGVyLWF1dGhvcg=='));
+  const _0x29d0 = atob('4piOIFlvdSBmb3VuZCB0aGUgc2VjcmV0IGF1dGhvciBjcmVkaXQhIFdlYnNpdGUgY3JhZnRlZCBieSBQZWxlYSBSYXVsLURhbmllbCDimI4=');
 
-    const popup = document.createElement('div');
-    popup.id = 'author-popup';
-    popup.textContent = message;
-    document.body.appendChild(popup);
+  const _0x59ac = document.createElement('div');
+  _0x59ac.id = atob('YXV0aG9yLXBvcHVw');
+  _0x59ac.textContent = _0x29d0;
+  document.body.appendChild(_0x59ac);
 
-    let hideTimeout;
+  let _0x3ac8;
 
-    footer.addEventListener('click', () => {
-      clicks++;
+  _0x8a7d.addEventListener('click', () => {
+    _0x1a2b++;
 
-      if (clicks === maxClicks) {
-        popup.classList.add('show');
+    if (_0x1a2b === _0x4f5c) {
+      _0x59ac.classList.add('show');
 
-        clearTimeout(hideTimeout);
-        hideTimeout = setTimeout(() => {
-          popup.classList.remove('show');
-        }, 5000);
+      clearTimeout(_0x3ac8);
+      _0x3ac8 = setTimeout(() => {
+        _0x59ac.classList.remove('show');
+      }, 5000);
 
-        clicks = 0;
-      }
+      _0x1a2b = 0;
+    }
 
-      clearTimeout(window._footerClickTimeout);
-      window._footerClickTimeout = setTimeout(() => {
-        clicks = 0;
-      }, 2000);
-    });
-  })();
+    clearTimeout(window['_footerClickTimeout']);
+    window['_footerClickTimeout'] = setTimeout(() => {
+      _0x1a2b = 0;
+    }, 2000);
+  });
+})();
 </script>
 
 </footer>

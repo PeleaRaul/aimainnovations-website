@@ -1,12 +1,12 @@
 # AIMA Innovations Website
 
-Welcome to the official repository for the **AIMA Innovations** website — a modern, responsive engineering company website featuring an integrated admin panel for easy content management.
+Welcome to this repository for any **TECH-COMPANY** related website — a modern, responsive engineering company website featuring an integrated admin panel for easy content management.
 
 ## 🌐 Overview
 
-This project is a fully functional company website developed for **AIMA Innovations SRL**, an engineering consultancy offering services like automation design, CAD modeling, SCADA systems, and technical R&D.
+This project is a fully functional company website developed for **TECH-COMPANY's**, an engineering consultancy offering services like automation design, CAD modeling, SCADA systems, and technical R&D.
 
-The site is built for performance, accessibility, and modern UX — optimized for both desktop and mobile devices. It includes standard informational pages, service/offer sections, project galleries, SEO-optimized metadata, GDPR compliance features, and more.
+The site is built for performance, accessibility, and modern UX — optimized for both desktop and mobile devices. It includes standard informational pages, service/offer sections, project galleries, SEO-optimized metadata, GDPR compliance features, and more. Also a CMS Admin - Panel for, ease of image and content change for company owners!
 
 ---
 
@@ -26,9 +26,12 @@ The site is built for performance, accessibility, and modern UX — optimized fo
 ## 🛠️ Technologies Used
 
 - **Frontend**:  
-  - HTML5  
+  - HTML5
+  - CSS (Vanilla)
   - Tailwind CSS  
-  - JavaScript (Vanilla)  
+  - JavaScript (Vanilla)
+  - AlpineJS
+  - AJAX
 
 - **Backend**:  
   - PHP 8+  
@@ -37,8 +40,9 @@ The site is built for performance, accessibility, and modern UX — optimized fo
 - **Other**:  
   - Trustpilot Integration  
   - Google Analytics / Meta Pixel (optional)  
-  - Open Graph Metadata  
-  - Responsive image galleries using `picsum.photos` for development  
+  - Open Graph Metadata
+  - Boxicons
+  - Responsive image galleries using `picsum.photos` for development (No longer active - since the images are dinamicaly changed by the CMS ADMIN PANEL)
 
 ---
 
@@ -59,10 +63,7 @@ If you’re an admin, the admin panel allows you to:
 
 To run locally:
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/PeleaRaul/aimainnovations-website.git
-   cd aima-innovations-website
+1. Aquire a license from: pelearauldaniel@gmail.com or Contact@pelearaul.ro
 
 ## 🚀 Project Status & Attribution
 
@@ -70,4 +71,4 @@ This GitHub repository is a *personal portfolio demo* of the AIMA INNOVATIONS we
 
 The company has its own hosted version, with potential changes and backend integrations.
 
-> ⚠️ All logos, names, and branding belonging to AIMA INNOVATIONS SRL are used here for demonstration purposes only. If you clone or use this codebase, you must **remove or replace all AIMA-specific content** (logos, names, images, texts).
+> ⚠️ All logos, names, and branding belonging to ANY OTHER COMPANY (if any) are used here for demonstration purposes only. If you clone or use this codebase, you must **remove or replace all other COMPANY-specific content** (logos, names, images, texts).

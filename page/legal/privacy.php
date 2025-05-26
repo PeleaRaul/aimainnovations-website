@@ -15,14 +15,14 @@
       <p><strong>Ultima actualizare:</strong> Mai 2025</p>
 
       <p>
-        Website-ul <strong>aimainnovations.ro</strong> respectă confidențialitatea vizitatorilor săi și se angajează
+        Website-ul <strong>[yoururl]</strong> respectă confidențialitatea vizitatorilor săi și se angajează
         să protejeze datele personale colectate, conform prevederilor <strong>Regulamentului (UE) 2016/679 (GDPR)</strong>.
       </p>
 
       <h2 class="text-2xl font-semibold text-blue-700">1. Cine suntem</h2>
       <p>
-        Acest website este operat de <strong>AIMA INNOVATIONS SRL</strong>. Pentru întrebări legate de date personale ne
-        puteți contacta la: <a href="mailto:contact@aimainnovations.ro" class="text-blue-600 underline">contact@aimainnovations.ro</a>.
+        Acest website este operat de <strong>[YOURCOMPANYNAMELTDSRL]</strong>. Pentru întrebări legate de date personale ne
+        puteți contacta la: <a href="mailto:contact@[yoururl]" class="text-blue-600 underline">contact@[yoururl]</a>.
       </p>
 
       <h2 class="text-2xl font-semibold text-blue-700">2. Ce date colectăm</h2>

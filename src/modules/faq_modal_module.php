@@ -11,7 +11,7 @@
     <div class="space-y-4">
       <div class="faq-item border-b border-gray-200 pb-4 cursor-pointer">
         <h3 class="text-xl font-semibold text-gray-900 flex justify-between items-center">
-          Ce servicii oferă AIMA INNOVATIONS?
+          Ce servicii oferă [YOUR COMPANY NAME]?
           <span class="transition-transform duration-300 transform faq-icon">+</span>
         </h3>
         <p class="text-gray-700 mt-2 max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
@@ -24,7 +24,7 @@
           <span class="transition-transform duration-300 transform faq-icon">+</span>
         </h3>
         <p class="text-gray-700 mt-2 max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
-          Prin formular, email: contact@aimainnovations.ro sau telefonic: +40 731 657 460.
+          Prin formular, email: contact@yourcompany.domain sau telefonic: +40 731 657 460.
         </p>
       </div>
       <div class="faq-item border-b border-gray-200 pb-4 cursor-pointer">
